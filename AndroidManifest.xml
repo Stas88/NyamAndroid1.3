@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.st.nyamnew"
+    android:installLocation="preferExternal"
+    android:versionCode="3"
+    android:versionName="1.3" >
+    
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="14"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    
+    <application
+   		android:icon="@drawable/logo"
+        android:label="@string/app_name" 
+        android:name=".NyamApplication"
+        android:theme="@style/Theme.NyamTheme">
+        <activity android:configChanges="orientation" 
+            android:name=".activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.DashboardActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".activities.TestActivity">
+        </activity>
+        <activity
+            android:name=".activities.MainListActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name" >
+            <intent-filter>
+		        <action android:name="android.intent.action.SEARCH" />
+		    </intent-filter>
+		    <meta-data 
+		        android:name="android.app.searchable"
+		        android:resource="@xml/searchable"/>
+         </activity>
+         <activity 
+             android:configChanges="orientation"
+	         android:name=".activities.RecipeActivity" >
+		    
+         </activity>
+        <activity android:theme="@android:style/Theme.Dialog" 
+	        android:name=".activities.DialogActivity" >
+        </activity>
+        <activity android:theme="@style/Theme.NyamTheme"
+            android:configChanges="orientation"
+	        android:name=".activities.ExpandableCategoriesActivity" >
+		    <intent-filter>
+		        <action android:name="android.intent.action.SEARCH" />
+		    </intent-filter>
+		    <meta-data android:name="android.app.searchable"
+                      android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:theme="@style/Theme.NyamTheme"
+            android:configChanges="orientation"
+	        android:name=".activities.ProfileActivity" >
+        </activity>
+        <activity android:theme="@style/Theme.NyamTheme"
+       
+	        android:name=".activities.IngredientsActivity" >
+        </activity>
+        
+        <service android:name=".services.SynchronizeService" />
+        <service android:name=".services.ConstantSynchronizationService" />
+      
+   		<receiver android:name=".broadcast_receivers.ConnectionChangeReceiver"
+          android:label="NetworkConnection">
+			  <intent-filter>
+			    <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+			  </intent-filter>
+		</receiver>
+        
+        <receiver android:name=".broadcast_receivers.SyncBroadcastReceier" android:enabled="true" android:exported="false">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />  
+			</intent-filter>
+		</receiver>
+    </application>
+</manifest>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="hello">Hello World, NyamActivity!</string>
+    <string name="app_name">Nyam</string>
+    <string name="search_hint">Введите текст</string>
+    <string name="search">Поиск</string>
+    <string name="loading">Загрузка...</string>
+    <string name="my_profile">Профиль</string>
+    <string name="recepies">Новые</string>
+    <string name="catalog">Каталог</string>
+    <string name="izbrannoe">Избранное</string>
+    <string name="about">О рецепте</string>
+    <string name="author">Автор:</string>
+   
+    <string name="step_word">Шаг</string>
+    <string name="favorite_citchen">Любимая кухня:</string>
+    <string name="rating_default">-1</string>
+    <string name="add_to_favorites">В избранное</string>
+    <string name="remove_from_favorites">Удалить</string>
+    
+    
+    <string name="about_me">Обо мне</string>
+    <string name="hobbies">Хобби, увлечения:</string>
+    <string name="cook_interests">Интересы в кулинарии:</string>
+    <string name="experience">Опыт в кулинарии:</string>
+    <string name="about_myself">О себе:</string>
+    
+    <string name="statistic">Статистика</string>
+    <string name="published_recipes">Опубликовано рецептов</string>
+    <string name="added_to_favorites">Добавлено в избранное</string>
+    <string name="comments_left">Оставлено коментариев:</string>
+    <string name="voices_left">Оставлено голосов</string>
+    <string name="friends_total">Друзей</string>
+    <string name="dots">...........................................................................................13</string>
+    
+    <string name="exit">Выход</string>
+    <string name="ingredients">Ингредиенты</string>
+    <string name="no_results_available">Нет результатов</string>
+</resources>

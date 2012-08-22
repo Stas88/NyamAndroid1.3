@@ -185,18 +185,18 @@ public class HttpFactory  {
 	}
 
 	public static boolean isNetworkAvailable(Context context) {
-		ConnectivityManager conMan = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
-
-		//wifi
-		State wifi = conMan.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState();
-
-		// if no network is available networkInfo will be null
-		// otherwise check if we are connected
-		if (wifi == NetworkInfo.State.CONNECTED || wifi == NetworkInfo.State.CONNECTING) {
-			Log.d(TAG, "isNetworkAvailable true");
-			return true;
-		}
-		return false;
+		boolean isFound = false;
+		ConnectivityManager conMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		   if (conMgr.getActiveNetworkInfo() != null
+		           && conMgr.getActiveNetworkInfo().isAvailable()
+		           && conMgr.getActiveNetworkInfo().isConnected()) {
+		       Log.d("Internet Connection  Present","");
+		       isFound=true;
+		   } else {
+		       Log.d("Internet Connection Not Present","");
+		       isFound= false;
+		   }
+		   return isFound;
 	}
 
 	public static int sendAddToFavorites(Context context, int recipeId) throws JSONException {
